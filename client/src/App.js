@@ -1,5 +1,5 @@
 import React from "react";
-import Rolodex from "./pages/rolodex";
+import Rolodex from "./pages/loading";
 function App() {
   return (
     <Rolodex />
