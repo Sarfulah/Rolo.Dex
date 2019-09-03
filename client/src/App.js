@@ -1,9 +1,8 @@
 import React from "react";
-import Rolodex from "./pages/Rolodex";
+import Rolodex from "./pages/loading";
 function App() {
   return (
-    // <h1>Hello World</h1>
-    <Rolodex/>
+    <Rolodex />
   );
 }
 
