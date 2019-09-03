@@ -15,6 +15,8 @@ class Rolodex extends Component {
     this.setState({ qrCode: ""})
   }
 
+  //help
+
   loadQRCode = () => {
     const { qrCode } = this.state;
     API.getQR()
