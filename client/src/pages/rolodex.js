@@ -1,64 +1,45 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import Jumbotron from "../components/Jumbotron";
-// import API from "../utils/API";
-// import DeleteBtn from "../components/DeleteBtn";
-// import Form from "../components/Form";
-// import Saved from '../components/Saved/index';
-// import { Col, Row, Container } from "../components/Grid";
-// import { List, ListItem } from "../components/List";
 import "./style.css";
-// import { Input, TextArea, FormBtn } from "../components/Form";
+import Button from "../components/Button";
+import Modal from "../components/Modal";
 
 class Rolodex extends Component {
-//   state = {
-//     bookSearch: "",
-//     books: []
-//   };
+    state = { show: false };
 
-//   componentDidMount() {
-//     this.loadBooks();
-//   }
+    showModal = () => {
+        this.setState({ show: true });
+    };
 
-//   handleInputChange = event => {
-//     const { name, value } = event.target;
-//     this.setState({
-//       [name]: value
-//     });
-//   };
+    hideModal = () => {
+        this.setState({ show: false });
+    };
+    login = () => {
+        console.log("loginbtn")
+        this.showModal();
+    }
 
-//   handleOnClick = event => {
-//     console.log("I clicked saved")
+    signup = () => {
+        console.log("signupbtn")
+    }
 
-//   }
-//   handleFormSubmit = event => {
-//     event.preventDefault();
-//     this.loadBooks();
+    render() {
+        return (
+            <div>
 
-//   }
+                <Jumbotron className="jumbotron jumbotron-fluid">
+                    <h1>Logo</h1>
+                </Jumbotron>
 
-//   loadBooks = () => {
-//     console.log(this.state.bookSearch);
-//     API.getBooks(this.state.bookSearch)
-//       .then(res => {
-//         console.log(res.data);
-//         this.setState({ books: res.data })
-//       })
-//       .catch(err => console.log(err));
-//   };
+                <Button onClick={this.login} data-toggle="modal" data-target="#loginModal">Login</Button>
+                <Button onClick={this.signup} data-toggle="modal" data-target="#signupModal">Sign Up</Button>
 
-  render() {
-    return (
-      <div>
-
-         <Jumbotron className="jumbotron jumbotron-fluid">
-           <h1>Hello World</h1>
-         
-       </Jumbotron>
-
-
-      </div>
-    );
-  }
+                <Modal modalName="loginModal" title="Login Modal" submitBtn="Login"/>
+                <Modal modalName="signupModal" title="Signup Modal" submitBtn="Sign Up"/>
+            </div>
+        );
+    }
 }
 
 export default Rolodex;
