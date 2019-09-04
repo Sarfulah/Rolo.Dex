@@ -32,7 +32,7 @@ class Rolodex extends Component {
     }
 
     handleLogin = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
 
         Axios
             .post("/user/login", {
@@ -60,7 +60,7 @@ class Rolodex extends Component {
     };
 
     handleSignup = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         
         console.log("signupbtn")
 
