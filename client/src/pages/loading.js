@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import "./style.css";
 import Button from "../components/Button";
-import Modal from "../components/Modal";
+// import Modal from "../components/Modal";
+import Axios from "axios";
 
 class Rolodex extends Component {
     state = { 
@@ -30,13 +31,62 @@ class Rolodex extends Component {
         console.log(event.target.value);
     }
 
-    login = (username, password) => {
+    handleLogin = (event) => {
+        event.preventDefault();
+
+        Axios
+            .post("/user/login", {
+                usernameLogIn: this.state.username,
+                passwordLogIn: this.state.password
+            })
+            .then(response => {
+                console.log("login response: ")
+                console.log(response)
+                if(response.status === 200) {
+                    this.props.updateUser({
+                        loggedIn: true,
+                        usernameLogIn: response.data.usernameLogIn
+                    })
+                    this.setState({
+                        redirectTo: "/"
+                    })
+                }
+            }).catch(error => {
+                console.log("login error: ")
+                console.log(error);
+            })
         console.log("loginbtn")
-        this.showModal();
+        
     };
 
-    signup = (username, password) => {
+    handleSignup = (event) => {
+        event.preventDefault();
+        
         console.log("signupbtn")
+
+        Axios
+            .post('/user/signup', {
+                usernameSignUp: this.state.username,
+                passwordSignUp: this.state.password
+        })
+            .then(response => {
+                console.log(response)
+                if (response.status === 200) {
+                    this.props.updateUser({
+                        loggedIn: true,
+                        usernameSignUp: response.data.usernameSignUp
+                    })
+                    // console.log('successful signup')
+                    this.setState({
+                        redirectTo: '/'
+                    })
+                } else {
+                    console.log('Sign-up error');
+                }
+            }).catch(error => {
+                console.log('Sign up server error: ')
+                console.log(error);
+            })
     };
 
     render() {
@@ -84,7 +134,7 @@ class Rolodex extends Component {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary" onClick={() => this.login()}>Log In</button>
+                                <button type="button" className="btn btn-primary" onClick={() => this.handleLogin()}>Log In</button>
                             </div>
                         </div>
                     </div>
@@ -108,7 +158,7 @@ class Rolodex extends Component {
                                         htmlFor="inputEmail3">Email</label>
                                     <div className="col-sm-10">
                                         <input type="email" className="form-control"
-                                            id="emailSignUp" name="emailSignUp" placeholder="Email" onChange={this.handleChange} value={this.state.usernameSignUp}/>
+                                            id="usernameSignUp" name="usernameSignUp" placeholder="Email" onChange={this.handleChange} value={this.state.usernameSignUp}/>
                                     </div>
                                 </div>
 
@@ -123,7 +173,7 @@ class Rolodex extends Component {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary" onClick={() => this.signup()}>Sign Up</button>
+                                <button type="button" className="btn btn-primary" onClick={() => this.handleSignup()}>Sign Up</button>
                             </div>
                         </div>
                     </div>
