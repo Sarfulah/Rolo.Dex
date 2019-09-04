@@ -1,8 +1,10 @@
 import React from "react";
-import Rolodex from "./pages/loading";
+// import Rolodex from "./pages/loading";
+import Home from "./pages/home";
 function App() {
   return (
-    <Rolodex />
+    // <Rolodex />
+    <Home/>
   );
 }
 
