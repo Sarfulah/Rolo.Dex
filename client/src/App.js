@@ -7,6 +7,7 @@ function App() {
     // <Rolodex />
     <Router>
     <div>
+    <Loading/>
     <Home/>
     <Route exact path="/newCard" component={Generate} />
     
