@@ -1,8 +1,11 @@
 import React from "react";
+import Nav from "../Nav";
 
 function Form(props) {
     return (
         <div>
+            
+            <Nav/>
             <form>
             <div className="form-row">
                     <div className="form-group col-md-6">
