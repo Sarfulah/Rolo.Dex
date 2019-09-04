@@ -37,6 +37,8 @@ class Rolodex extends Component {
 
                 <Modal modalName="loginModal" title="Login Modal" submitBtn="Login"/>
                 <Modal modalName="signupModal" title="Signup Modal" submitBtn="Sign Up"/>
+
+                <a href="/loggedIn">Temp Login</a>
             </div>
         );
     }
