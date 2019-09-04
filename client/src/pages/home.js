@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 import "./style.css";
 import Nav from "../components/Nav";
 
@@ -13,8 +14,9 @@ render() {
         <div>
             <Nav/>
             <div class="card-body">
-                <a href="#" class="btn btn-primary">CREATE NEW CARD</a>
-                <a href="#" class="btn btn-primary">SEARCH ROLO.DEX</a>
+                <Link to="/newCard" className="btn btn-primary">CREATE NEW CARD</Link>
+                
+                <Link to="/search" className="btn btn-primary">SEARCH ROLO.DEX</Link>
             </div>
         </div>
     );

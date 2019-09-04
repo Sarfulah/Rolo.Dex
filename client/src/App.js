@@ -1,10 +1,17 @@
 import React from "react";
-// import Rolodex from "./pages/loading";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/home";
+import Generate from "./pages/generate";
 function App() {
   return (
     // <Rolodex />
+    <Router>
+    <div>
     <Home/>
+    <Route exact path="/newCard" component={Generate} />
+    
+    </div>
+    </Router>
   );
 }
 
