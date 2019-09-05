@@ -14,6 +14,7 @@ function App() {
     <Route exact path="/loggedin" component={Home} />
     <Route exact path="/newCard" component={Generate} />
     <Route exact path="/search" component={Search} />
+    <Route exact path="/camera" component={Camera}/>
     </div>
     </Router>
   );
