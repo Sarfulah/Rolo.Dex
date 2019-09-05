@@ -2,7 +2,7 @@ import React from "react";
 
 function Modal(props) {
     return (
-        <div className="modal fade" id={props.modalName} tabindex="-1" role="dialog" aria-hidden="true">
+        <div className="modal fade" id={props.modalName} tabIndex="-1" role="dialog" aria-hidden="true">
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
@@ -16,7 +16,7 @@ function Modal(props) {
 
                         <div className="form-group">
                             <label className="col-sm-2 control-label"
-                                for="inputEmail3">Email</label>
+                                htmlFor="inputEmail3">Email</label>
                             <div className="col-sm-10">
                                 <input type="email" className="form-control"
                                     id="inputEmail3" placeholder="Email" />
@@ -25,7 +25,7 @@ function Modal(props) {
 
                         <div className="form-group">
                             <label className="col-sm-2 control-label"
-                                for="inputPassword3" >Password</label>
+                                htmlFor="inputPassword3" >Password</label>
                             <div className="col-sm-10">
                                 <input type="password" className="form-control"
                                     id="inputPassword3" placeholder="Password" />
@@ -34,7 +34,7 @@ function Modal(props) {
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">{props.submitBtn}</button>
+                        <button type="button" className="btn btn-primary" onClick={() => props.buttonFunction()}>{props.submitBtn}</button>
                     </div>
                 </div>
             </div>
