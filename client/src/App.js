@@ -14,7 +14,6 @@ function App() {
     <Route exact path="/loggedin" component={Home} />
     <Route exact path="/newCard" component={Generate} />
     <Route exact path="/search" component={Search} />
-    
     </div>
     </Router>
   );
