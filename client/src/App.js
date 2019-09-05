@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Loading from "./pages/loading";
 import Generate from "./pages/generate";
+import Search from "./pages/search";
+
 function App() {
   return (
     // <Rolodex />
@@ -11,7 +13,7 @@ function App() {
     <Route exact path="/" component={Loading} />
     <Route exact path="/loggedin" component={Home} />
     <Route exact path="/newCard" component={Generate} />
-    
+    <Route exact path="/search" component={Search} />
     </div>
     </Router>
   );
