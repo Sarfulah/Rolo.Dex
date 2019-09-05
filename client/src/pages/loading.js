@@ -33,12 +33,15 @@ class Rolodex extends Component {
     }
 
     handleLogin = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
+
+        console.log(this.state.emailLogIn);
+        console.log(this.state.passwordLogIn);
 
         Axios
-            .post("/user/login", {
-                emailLogIn: this.state.email,
-                passwordLogIn: this.state.password
+            .post("/user/signin", {
+                email: this.state.emailLogIn,
+                password: this.state.passwordLogIn
             })
             .then(response => {
                 console.log("login response: ")
@@ -67,8 +70,8 @@ class Rolodex extends Component {
 
         Axios
             .post('/user/signup', {
-                emailSignUp: this.state.email,
-                passwordSignUp: this.state.password
+                email: this.state.emailSignUp,
+                password: this.state.passwordSignUp
         })
             .then(response => {
                 console.log(response)
@@ -135,7 +138,7 @@ class Rolodex extends Component {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary" onClick={() => this.handleLogin()}>Log In</button>
+                                <button type="button" className="btn btn-primary" onClick={this.handleLogin}>Log In</button>
                             </div>
                         </div>
                     </div>
