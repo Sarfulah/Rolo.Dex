@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //Routes
-app.use('/user', user);
+// app.use('/user', user);
 
 //Sessions
 
@@ -41,9 +41,9 @@ app.post('/user', (req, res) => {
 
 //Passport
 
-app.use(passport.initialize())
+// app.use(passport.initialize())
 
-app.use(passport.session())
+// app.use(passport.session())
 
 // Start the API server
 app.listen(PORT, function() {
