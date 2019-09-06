@@ -53,3 +53,20 @@ border: 1px solid #EFB5A8;
     border-radius: 1.5rem;
     align-content: center;
 }
+
+.modal-content{
+    background-color: #FDE5DE;
+}
+
+.modal-header {
+    border-bottom: 1px solid #FBCBBD;
+}
+
+.modal-footer {
+    border-top: 1px solid #FBCBBD;
+}
+
+
+h5 {
+    font-size: 35px;
+}

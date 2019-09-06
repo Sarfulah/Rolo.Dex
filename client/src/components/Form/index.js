@@ -105,9 +105,6 @@ function Form(props) {
                         <input type="text" className="form-control" id="inputAddress" placeholder="yoursite.url" />
                     </div>
                 </div>
-                <div className="form-group">
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
     );
