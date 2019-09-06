@@ -106,9 +106,9 @@ class Rolodex extends Component {
                         <Button className="loginB btn btn-lg" onClick={this.login} data-toggle="modal" data-target="#loginModal">LOGIN</Button>
                     </div>
                     <div className="row">
-                    <div className="col-md-12">
-                        <Button className="signupB btn btn-lg" onClick={this.signup} data-toggle="modal" data-target="#signupModal">SIGN UP</Button>
-                    </div>
+                        <div className="col-md-12">
+                            <Button className="signupB btn btn-lg" onClick={this.signup} data-toggle="modal" data-target="#signupModal">SIGN UP</Button>
+                        </div>
                     </div>
                 </div>
 

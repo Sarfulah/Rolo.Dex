@@ -13,7 +13,7 @@ body {
 }
 
 .home {
-    width: 350px;
+    width: 325px;
     align-content: center;
     background-color: #FDE5DE;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -23,6 +23,7 @@ h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 45px;
     color: #605353;
+    text-align: center;
 }
 
 label{
@@ -78,4 +79,9 @@ h5 {
 
 .green {
     color: #038871
+}
+
+.container {
+    display: block;
+    width: 100vw;
 }

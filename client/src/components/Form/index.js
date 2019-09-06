@@ -36,7 +36,7 @@ function Form(props) {
                     <div className="form-group col-md-6">
                         <label htmlFor="inputCity">CITY</label>
                         <input type="text" className="form-control" id="inputCity"
-                        placeholder="Philadelphia" />
+                            placeholder="Philadelphia" />
                     </div>
                     <div className="form-group col-md-4">
                         <label htmlFor="inputState">STATE</label>

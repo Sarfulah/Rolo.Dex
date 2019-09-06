@@ -13,9 +13,9 @@ class Generate extends Component {
         return (
             <div className="container">
                 <Nav />
-                <div className="row">
-                    <div className="col-md-12">
-                        <h1><span className="blue">CREATE NEW CARD</span></h1>
+                <div className="row mt-5">
+                    <div className="col-md-6 mx-auto mb-4">
+                        <h1 className="mx-auto"><span className="blue">CREATE NEW CARD</span></h1>
                     </div>
                 </div>
             <div>
