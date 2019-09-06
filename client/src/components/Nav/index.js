@@ -6,12 +6,12 @@ function Nav() {
       <a className="navbar-brand" href="/">
         Logo Img
       </a>
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Camera Icon</a>
+      <ul className="nav">
+        <li className="nav-item">
+          <a className="nav-link active" href="#">Camera Icon</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">QR Code Icon</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">QR Code Icon</a>
         </li>
       </ul>
     </nav>
