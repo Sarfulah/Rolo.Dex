@@ -10,39 +10,39 @@ function Form(props) {
                 <div className="form-row">
                     <div className="form-group col-md-6">
                         <label for="inputName">First Name</label>
-                        <input type="text" className="form-control" id="inputName" placeholder="First Name" />
+                        <input type="text" name="firstName" className="form-control" id="inputName" placeholder="First Name" value={props.firstName} onChange={props.handleInputChange} />
                     </div>
                     <div className="form-group col-md-6">
                         <label for="inputPassword4">Last Name</label>
-                        <input type="text" className="form-control" id="inputName" placeholder="Last Name" />
+                        <input type="text" name="lastName"  className="form-control" id="inputName" placeholder="Last Name" value={props.lastName} onChange={props.handleInputChange}/>
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
                         <label for="inputMobile">Mobile</label>
-                        <input type="text" className="form-control" id="inputMobile" placeholder="Mobile" />
+                        <input type="text" name="mobileNum" className="form-control" id="inputMobile" placeholder="Mobile"  value={props.mobileNum} onChange={props.handleInputChange}/>
                     </div>
                     <div className="form-group col-md-6">
                         <label for="inputEmail4">Email</label>
-                        <input type="text" className="form-control" id="inputEmail4" placeholder="your@email.com" />
+                        <input type="text" name="emailAdd" className="form-control" id="inputEmail4" placeholder="your@email.com"  value={props.emailAdd} onChange={props.handleInputChange}/>
                     </div>
                 </div>
                 <div className="form-group">
                     <label for="inputAddress">Company</label>
-                    <input type="text" className="form-control" id="inputCompany" placeholder="Company" />
+                    <input type="text" name="companyName" className="form-control" id="inputCompany" placeholder="Company"  value={props.companyName} onChange={props.handleInputChange}/>
                 </div>
                 <div className="form-group">
                     <label for="inputAddress2">Address</label>
-                    <input type="text" className="form-control" id="inputAddress2" placeholder="123 Street Name" />
+                    <input type="text" name="address" className="form-control" id="inputAddress2" placeholder="123 Street Name"  value={props.address} onChange={props.handleInputChange}/>
                 </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
                         <label for="inputCity">City</label>
-                        <input type="text" className="form-control" id="inputCity" />
+                        <input type="text" name="city" className="form-control" id="inputCity"  value={props.city} onChange={props.handleInputChange}/>
                     </div>
                     <div className="form-group col-md-4">
                         <label for="inputState">State</label>
-                        <select id="inputState" className="form-control">
+                        <select id="inputState" name="state" className="form-control"  value={props.state} onChange={props.handleInputChange}>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -98,18 +98,18 @@ function Form(props) {
                     </div>
                     <div className="form-group col-md-2">
                         <label for="inputZip">Zip</label>
-                        <input type="text" className="form-control" id="inputZip" />
+                        <input type="text" name= "zip" className="form-control" id="inputZip"  value={props.zip} onChange={props.handleInputChange}/>
                     </div>
                 </div>
                 <div>
                     <div className="form-group">
                         <label for="inputAddress">Website</label>
-                        <input type="text" className="form-control" id="inputAddress" placeholder="Website" />
+                        <input type="text" name="website" className="form-control" id="inputAddress" placeholder="Website"  value={props.website} onChange={props.handleInputChange}/>
                     </div>
                 </div>
                 <div className="form-group">
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button onClick={props.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
     );
