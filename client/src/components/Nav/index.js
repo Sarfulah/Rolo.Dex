@@ -1,17 +1,19 @@
 import React from "react";
+import icon from "../../assets/images/LOGOTL.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <a className="navbar-brand" href="/">
-        Logo Img
+        <img src={icon}></img>
       </a>
-      <ul className="nav">
+      <ul className="nav float-right">
         <li className="nav-item">
-          <a className="nav-link active" href="#">Camera Icon</a>
+          <a className="nav-link active" href="#"><FontAwesomeIcon icon="camera" size="lg" /></a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">QR Code Icon</a>
+          <a className="nav-link" href="#"><FontAwesomeIcon icon="qrcode" size="lg" /></a>
         </li>
       </ul>
     </nav>

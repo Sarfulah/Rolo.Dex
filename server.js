@@ -1,5 +1,5 @@
 const express = require("express");
-const db = requre('./models');
+const db = require('./models');
 const passport = require('./passport');
 const user = require('./routes/user');
 const session = require('express-session')

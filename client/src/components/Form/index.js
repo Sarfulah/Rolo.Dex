@@ -1,47 +1,44 @@
 import React from "react";
-import Nav from "../Nav";
 
 function Form(props) {
     return (
-        <div>
-
-            <Nav />
+        <div className="jumbotron generate">
             <form>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label for="inputName">First Name</label>
+                        <label htmlFor="inputName">First Name</label>
                         <input type="text" className="form-control" id="inputName" placeholder="First Name" />
                     </div>
                     <div className="form-group col-md-6">
-                        <label for="inputPassword4">Last Name</label>
+                        <label htmlFor="inputPassword4">Last Name</label>
                         <input type="text" className="form-control" id="inputName" placeholder="Last Name" />
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label for="inputMobile">Mobile</label>
+                        <label htmlFor="inputMobile">Mobile</label>
                         <input type="text" className="form-control" id="inputMobile" placeholder="Mobile" />
                     </div>
                     <div className="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
+                        <label htmlFor="inputEmail4">Email</label>
                         <input type="text" className="form-control" id="inputEmail4" placeholder="your@email.com" />
                     </div>
                 </div>
                 <div className="form-group">
-                    <label for="inputAddress">Company</label>
+                    <label htmlFor="inputAddress">Company</label>
                     <input type="text" className="form-control" id="inputCompany" placeholder="Company" />
                 </div>
                 <div className="form-group">
-                    <label for="inputAddress2">Address</label>
+                    <label htmlFor="inputAddress2">Address</label>
                     <input type="text" className="form-control" id="inputAddress2" placeholder="123 Street Name" />
                 </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label for="inputCity">City</label>
+                        <label htmlFor="inputCity">City</label>
                         <input type="text" className="form-control" id="inputCity" />
                     </div>
                     <div className="form-group col-md-4">
-                        <label for="inputState">State</label>
+                        <label htmlFor="inputState">State</label>
                         <select id="inputState" className="form-control">
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -97,13 +94,13 @@ function Form(props) {
                         </select>
                     </div>
                     <div className="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
+                        <label htmlFor="inputZip">Zip</label>
                         <input type="text" className="form-control" id="inputZip" />
                     </div>
                 </div>
                 <div>
                     <div className="form-group">
-                        <label for="inputAddress">Website</label>
+                        <label htmlFor="inputAddress">Website</label>
                         <input type="text" className="form-control" id="inputAddress" placeholder="Website" />
                     </div>
                 </div>

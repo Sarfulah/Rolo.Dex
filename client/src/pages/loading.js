@@ -5,10 +5,11 @@ import "./style.css";
 import Button from "../components/Button";
 // import Modal from "../components/Modal";
 import Axios from "axios";
+import logo from "../assets/images/logoT@2x.png";
 
 
 class Rolodex extends Component {
-    state = { 
+    state = {
         show: false,
         emailLogIn: "",
         passwordLogIn: "",
@@ -43,7 +44,7 @@ class Rolodex extends Component {
             .then(response => {
                 console.log("login response: ")
                 console.log(response)
-                if(response.status === 200) {
+                if (response.status === 200) {
                     this.props.updateUser({
                         loggedIn: true,
                         emailLogIn: response.data.emailLogIn
@@ -57,19 +58,19 @@ class Rolodex extends Component {
                 console.log(error);
             })
         console.log("loginbtn")
-        
+
     };
 
     handleSignup = (event) => {
         // event.preventDefault();
-        
+
         console.log("signupbtn")
 
         Axios
             .post('/user/signup', {
                 emailSignUp: this.state.email,
                 passwordSignUp: this.state.password
-        })
+            })
             .then(response => {
                 console.log(response)
                 if (response.status === 200) {
@@ -92,14 +93,25 @@ class Rolodex extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
+                <div className="row mb-5">
+                    <div className="col-md-4"></div>
+                    <div className="col-md-4">
+                        <img className="mt-5" src={logo}></img>
+                    </div>
+                    <div className="col-md-4"></div>
+                </div>
+                <div className="row">
+                    <div className="col-md-12 mb-5">
+                        <Button onClick={this.login} data-toggle="modal" data-target="#loginModal">Login</Button>
+                    </div>
+                    <div className="row">
+                    <div className="col-md-12">
+                        <Button onClick={this.signup} data-toggle="modal" data-target="#signupModal">Sign Up</Button>
+                    </div>
+                    </div>
+                </div>
 
-                <Jumbotron className="jumbotron jumbotron-fluid">
-                    <h1>Logo</h1>
-                </Jumbotron>
-
-                <Button onClick={this.login} data-toggle="modal" data-target="#loginModal">Login</Button>
-                <Button onClick={this.signup} data-toggle="modal" data-target="#signupModal">Sign Up</Button>
 
 
                 {/* Log in modal */}
@@ -120,7 +132,7 @@ class Rolodex extends Component {
                                         htmlFor="inputEmail3">Email</label>
                                     <div className="col-sm-10">
                                         <input type="email" className="form-control"
-                                            id="emailLogIn" name="emailLogIn" placeholder="Email" onChange={this.handleChange} value={this.state.emailLogIn}/>
+                                            id="emailLogIn" name="emailLogIn" placeholder="Email" onChange={this.handleChange} value={this.state.emailLogIn} />
                                     </div>
                                 </div>
 
@@ -129,7 +141,7 @@ class Rolodex extends Component {
                                         htmlFor="inputPassword3" >Password</label>
                                     <div className="col-sm-10">
                                         <input type="password" className="form-control"
-                                            id="passwordLogIn" name="passwordLogIn" placeholder="Password" onChange={this.handleChange} value={this.state.passwordLogIn}/>
+                                            id="passwordLogIn" name="passwordLogIn" placeholder="Password" onChange={this.handleChange} value={this.state.passwordLogIn} />
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +171,7 @@ class Rolodex extends Component {
                                         htmlFor="inputEmail3">Email</label>
                                     <div className="col-sm-10">
                                         <input type="email" className="form-control"
-                                            id="emailSignUp" name="emailSignUp" placeholder="Email" onChange={this.handleChange} value={this.state.emailSignUp}/>
+                                            id="emailSignUp" name="emailSignUp" placeholder="Email" onChange={this.handleChange} value={this.state.emailSignUp} />
                                     </div>
                                 </div>
 
@@ -168,7 +180,7 @@ class Rolodex extends Component {
                                         htmlFor="inputPassword3" >Password</label>
                                     <div className="col-sm-10">
                                         <input type="password" className="form-control"
-                                            id="passwordSignUp" name="passwordSignUp" placeholder="Password" onChange={this.handleChange} value={this.state.passwordSignUp}/>
+                                            id="passwordSignUp" name="passwordSignUp" placeholder="Password" onChange={this.handleChange} value={this.state.passwordSignUp} />
                                     </div>
                                 </div>
                             </div>

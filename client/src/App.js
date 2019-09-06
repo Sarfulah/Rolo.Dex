@@ -4,6 +4,11 @@ import Home from "./pages/home";
 import Loading from "./pages/loading";
 import Generate from "./pages/generate";
 import Search from "./pages/search";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCamera, faQrcode } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCamera, faQrcode)
 
 function App() {
   return (
