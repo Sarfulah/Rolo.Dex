@@ -6,39 +6,40 @@ function Form(props) {
             <form>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label htmlFor="inputName">First Name</label>
-                        <input type="text" className="form-control" id="inputName" placeholder="First Name" />
+                        <label htmlFor="inputName">FIRST NAME</label>
+                        <input type="text" className="form-control" id="inputName" placeholder="John" />
                     </div>
                     <div className="form-group col-md-6">
-                        <label htmlFor="inputPassword4">Last Name</label>
-                        <input type="text" className="form-control" id="inputName" placeholder="Last Name" />
+                        <label htmlFor="inputPassword4">LAST NAME</label>
+                        <input type="text" className="form-control" id="inputName" placeholder="Smith" />
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label htmlFor="inputMobile">Mobile</label>
-                        <input type="text" className="form-control" id="inputMobile" placeholder="Mobile" />
+                        <label htmlFor="inputMobile">MOBILE</label>
+                        <input type="text" className="form-control" id="inputMobile" placeholder="215-555-1234" />
                     </div>
                     <div className="form-group col-md-6">
-                        <label htmlFor="inputEmail4">Email</label>
+                        <label htmlFor="inputEmail4">EMAIL</label>
                         <input type="text" className="form-control" id="inputEmail4" placeholder="your@email.com" />
                     </div>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="inputAddress">Company</label>
+                    <label htmlFor="inputAddress">COMPANY</label>
                     <input type="text" className="form-control" id="inputCompany" placeholder="Company" />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="inputAddress2">Address</label>
+                    <label htmlFor="inputAddress2">ADDRESS</label>
                     <input type="text" className="form-control" id="inputAddress2" placeholder="123 Street Name" />
                 </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label htmlFor="inputCity">City</label>
-                        <input type="text" className="form-control" id="inputCity" />
+                        <label htmlFor="inputCity">CITY</label>
+                        <input type="text" className="form-control" id="inputCity"
+                        placeholder="Philadelphia" />
                     </div>
                     <div className="form-group col-md-4">
-                        <label htmlFor="inputState">State</label>
+                        <label htmlFor="inputState">STATE</label>
                         <select id="inputState" className="form-control">
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -94,14 +95,14 @@ function Form(props) {
                         </select>
                     </div>
                     <div className="form-group col-md-2">
-                        <label htmlFor="inputZip">Zip</label>
-                        <input type="text" className="form-control" id="inputZip" />
+                        <label htmlFor="inputZip">ZIP CODE</label>
+                        <input type="text" className="form-control" id="inputZip" placeholder="12345" />
                     </div>
                 </div>
                 <div>
                     <div className="form-group">
-                        <label htmlFor="inputAddress">Website</label>
-                        <input type="text" className="form-control" id="inputAddress" placeholder="Website" />
+                        <label htmlFor="inputAddress">WEBSITE</label>
+                        <input type="text" className="form-control" id="inputAddress" placeholder="yoursite.url" />
                     </div>
                 </div>
                 <div className="form-group">

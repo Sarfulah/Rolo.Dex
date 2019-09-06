@@ -1,26 +1,55 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap');
+
 body {
     background-color: #FBCBBD;
     font-family: 'Oswald', sans-serif;
 }
 
 .generate {
-    background-color: #FFF;
-    opacity: 0.5;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #FDE5DE;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.home {
+    width: 350px;
+    align-content: center;
+    background-color: #FDE5DE;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 45px;
-    color: #000;
+    color: #605353;
 }
 
-h2 {
-    /* labels */
+label{
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #605353;
 }
 
-h3 {
+input {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
 
+.form-control {
+border: 1px solid #EFB5A8;
+}
+
+.signupB {
+    background-color: #038871;
+    color: #FFF;
+    border-radius: 1.5rem;
+    align-content: center;
+}
+
+.loginB {
+    background-color: #7FA3D5;
+    color: #FFF;
+    border-radius: 1.5rem;
+    align-content: center;
 }

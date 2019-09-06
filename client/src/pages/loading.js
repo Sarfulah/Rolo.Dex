@@ -95,19 +95,19 @@ class Rolodex extends Component {
         return (
             <div className="container">
                 <div className="row mb-5">
-                    <div className="col-md-4"></div>
-                    <div className="col-md-4">
+                    {/* <div className="col-md-3"></div> */}
+                    <div className="col-md-12">
                         <img className="mt-5" src={logo}></img>
                     </div>
-                    <div className="col-md-4"></div>
+                    {/* <div className="col-md-3"></div> */}
                 </div>
                 <div className="row">
                     <div className="col-md-12 mb-5">
-                        <Button onClick={this.login} data-toggle="modal" data-target="#loginModal">Login</Button>
+                        <Button className="loginB btn btn-lg" onClick={this.login} data-toggle="modal" data-target="#loginModal">LOGIN</Button>
                     </div>
                     <div className="row">
                     <div className="col-md-12">
-                        <Button onClick={this.signup} data-toggle="modal" data-target="#signupModal">Sign Up</Button>
+                        <Button className="signupB btn btn-lg" onClick={this.signup} data-toggle="modal" data-target="#signupModal">SIGN UP</Button>
                     </div>
                     </div>
                 </div>
@@ -115,11 +115,11 @@ class Rolodex extends Component {
 
 
                 {/* Log in modal */}
-                <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
+                <div className="modal fade modalS" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">Log In</h5>
+                                <h5 className="modal-title mx-auto" id="exampleModalLabel">Log In</h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
