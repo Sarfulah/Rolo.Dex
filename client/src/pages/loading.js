@@ -5,6 +5,7 @@ import "./style.css";
 import Button from "../components/Button";
 // import Modal from "../components/Modal";
 import Axios from "axios";
+import { Redirect } from 'react-router-dom';
 
 
 class Rolodex extends Component {
@@ -13,7 +14,8 @@ class Rolodex extends Component {
         emailLogIn: "",
         passwordLogIn: "",
         emailSignUp: "",
-        passwordSignUp: ""
+        passwordSignUp: "",
+        redirectTo: null
     };
 
     showModal = () => {
@@ -49,10 +51,11 @@ class Rolodex extends Component {
                 if(response.status === 200) {
                     this.props.updateUser({
                         loggedIn: true,
-                        emailLogIn: response.data.emailLogIn
+                        emailLogIn: response.data.email
                     })
                     this.setState({
-                        redirectTo: "/"
+                        show: false,
+                        redirectTo: "/loggedin"
                     })
                 }
             }).catch(error => {
@@ -82,8 +85,8 @@ class Rolodex extends Component {
                     })
                     // console.log('successful signup')
                     this.setState({
-                        redirectTo: '/'
-                    })
+                        show: false
+                    });
                 } else {
                     console.log('Sign-up error');
                 }
@@ -94,96 +97,100 @@ class Rolodex extends Component {
     };
 
     render() {
-        return (
-            <div>
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
+            return (
+                <div>
 
-                <Jumbotron className="jumbotron jumbotron-fluid">
-                    <h1>Logo</h1>
-                </Jumbotron>
+                    <Jumbotron className="jumbotron jumbotron-fluid">
+                        <h1>Logo</h1>
+                    </Jumbotron>
 
-                <Button onClick={this.login} data-toggle="modal" data-target="#loginModal">Login</Button>
-                <Button onClick={this.signup} data-toggle="modal" data-target="#signupModal">Sign Up</Button>
+                    <Button onClick={this.login} data-toggle="modal" data-target="#loginModal">Login</Button>
+                    <Button onClick={this.signup} data-toggle="modal" data-target="#signupModal">Sign Up</Button>
 
 
-                {/* Log in modal */}
-                <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
-                    <div className="modal-dialog" role="document">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">Log In</h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-
-                            <div className="modal-body">
-
-                                <div className="form-group">
-                                    <label className="col-sm-2 control-label"
-                                        htmlFor="inputEmail3">Email</label>
-                                    <div className="col-sm-10">
-                                        <input type="email" className="form-control"
-                                            id="emailLogIn" name="emailLogIn" placeholder="Email" onChange={this.handleChange} value={this.state.emailLogIn}/>
-                                    </div>
+                    {/* Log in modal */}
+                    <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-hidden="true">
+                        <div className="modal-dialog" role="document">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="exampleModalLabel">Log In</h5>
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
 
-                                <div className="form-group">
-                                    <label className="col-sm-2 control-label"
-                                        htmlFor="inputPassword3" >Password</label>
-                                    <div className="col-sm-10">
-                                        <input type="password" className="form-control"
-                                            id="passwordLogIn" name="passwordLogIn" placeholder="Password" onChange={this.handleChange} value={this.state.passwordLogIn}/>
+                                <div className="modal-body">
+
+                                    <div className="form-group">
+                                        <label className="col-sm-2 control-label"
+                                            htmlFor="inputEmail3">Email</label>
+                                        <div className="col-sm-10">
+                                            <input type="email" className="form-control"
+                                                id="emailLogIn" name="emailLogIn" placeholder="Email" onChange={this.handleChange} value={this.state.emailLogIn}/>
+                                        </div>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="col-sm-2 control-label"
+                                            htmlFor="inputPassword3" >Password</label>
+                                        <div className="col-sm-10">
+                                            <input type="password" className="form-control"
+                                                id="passwordLogIn" name="passwordLogIn" placeholder="Password" onChange={this.handleChange} value={this.state.passwordLogIn}/>
+                                        </div>
                                     </div>
                                 </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.handleLogin}>Log In</button>
+                                </div>
                             </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary" onClick={this.handleLogin}>Log In</button>
+                        </div>
+                    </div>
+
+                    {/* Sign up modal */}
+                    <div className="modal fade" id="signupModal" tabIndex="-1" role="dialog" aria-hidden="true">
+                        <div className="modal-dialog" role="document">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="exampleModalLabel">Sign Up</h5>
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div className="modal-body">
+
+                                    <div className="form-group">
+                                        <label className="col-sm-2 control-label"
+                                            htmlFor="inputEmail3">Email</label>
+                                        <div className="col-sm-10">
+                                            <input type="email" className="form-control"
+                                                id="emailSignUp" name="emailSignUp" placeholder="Email" onChange={this.handleChange} value={this.state.emailSignUp}/>
+                                        </div>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="col-sm-2 control-label"
+                                            htmlFor="inputPassword3" >Password</label>
+                                        <div className="col-sm-10">
+                                            <input type="password" className="form-control"
+                                                id="passwordSignUp" name="passwordSignUp" placeholder="Password" onChange={this.handleChange} value={this.state.passwordSignUp}/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" className="btn btn-primary"  data-dismiss="modal" onClick={() => this.handleSignup()}>Sign Up</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                {/* Sign up modal */}
-                <div className="modal fade" id="signupModal" tabIndex="-1" role="dialog" aria-hidden="true">
-                    <div className="modal-dialog" role="document">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">Sign Up</h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-
-                            <div className="modal-body">
-
-                                <div className="form-group">
-                                    <label className="col-sm-2 control-label"
-                                        htmlFor="inputEmail3">Email</label>
-                                    <div className="col-sm-10">
-                                        <input type="email" className="form-control"
-                                            id="emailSignUp" name="emailSignUp" placeholder="Email" onChange={this.handleChange} value={this.state.emailSignUp}/>
-                                    </div>
-                                </div>
-
-                                <div className="form-group">
-                                    <label className="col-sm-2 control-label"
-                                        htmlFor="inputPassword3" >Password</label>
-                                    <div className="col-sm-10">
-                                        <input type="password" className="form-control"
-                                            id="passwordSignUp" name="passwordSignUp" placeholder="Password" onChange={this.handleChange} value={this.state.passwordSignUp}/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary" onClick={() => this.handleSignup()}>Sign Up</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
+            );
+        }
     }
 }
 

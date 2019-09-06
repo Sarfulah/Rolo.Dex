@@ -4,35 +4,33 @@ const User = require('../models/User')
 const passport = require('../passport')
 
 router.post('/signup', (req, res) => {
-    res.json({
-        response: "hi"
-    })
     console.log('user signup');
-    const { emailSignup, passwordSignup } = req.body
-    // User.findOne({ emailSignup: emailSignup }, (err, user) => {
-    //     if (err) {
-    //         console.log('User.js post error: ', err)
-    //     } else if (user) {
-    //         res.json({
-    //             error: 'Sorry, email address already in use: ${emailSignup}'
-    //         })
-    //     }
-    //     else {
-    //         const newUser = new User({
-    //             emailSignup: emailSignup,
-    //             passwordSignup: passwordSignup
-    //         })
-    //         newUser.save((err, savedUser) => {
-    //             if (err) return res.json(err)
-    //             res.json(savedUser)
-    //         })
-    //     }
-    // })
+    const { email, password } = req.body
+    User.findOne({ email: email }, (err, user) => {
+        if (err) {
+            console.log('User.js post error: ', err)
+        } else if (user) {
+            res.json({
+                error: 'Sorry, email address already in use: ${emailSignup}'
+            })
+        }
+        else {
+            const newUser = new User({
+                email: email,
+                password: password
+            })
+            newUser.save((err, savedUser) => {
+                if (err) return res.json(err)
+                res.json(savedUser)
+            })
+        }
+    })
 })
 
 router.post(
     '/signin',
     function (req, res, next) {
+        console.log('routes/user.js, login, req.body: ');
         console.log(req.body)
         next()
     },
@@ -40,7 +38,7 @@ router.post(
     (req, res) => {
         console.log('logged in', req.user);
         var userInfo = {
-            emailSignup: req.user.emailSignup
+            email: req.user.email
         };
         res.send(userInfo);
     }
