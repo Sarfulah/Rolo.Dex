@@ -9,17 +9,17 @@ class Home extends Component {
 
 
 
-render() {
-    return (
-        <div>
-            <Nav/>
-            <div class="card-body">
-                <Link to="/newCard" className="btn btn-primary">CREATE NEW CARD</Link>
-                
-                <Link to="/search" className="btn btn-primary">SEARCH ROLO.DEX</Link>
+    render() {
+        return (
+            <div>
+                <Nav />
+                <div className="card-body">
+                    <Link to="/newCard" className="btn btn-primary">CREATE NEW CARD</Link>
+
+                    <Link to="/search" className="btn btn-primary">SEARCH ROLO.DEX</Link>
+                </div>
             </div>
-        </div>
-    );
-}
+        );
+    }
 }
 export default Home;
