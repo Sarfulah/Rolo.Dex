@@ -15,7 +15,7 @@ class Generate extends Component {
                 <Nav />
                 <div className="row">
                     <div className="col-md-12">
-                        <h1>CREATE NEW CARD</h1>
+                        <h1><span className="blue">CREATE NEW CARD</span></h1>
                     </div>
                 </div>
             <div>

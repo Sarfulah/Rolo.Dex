@@ -69,4 +69,13 @@ border: 1px solid #EFB5A8;
 
 h5 {
     font-size: 35px;
+    text-align: center;
+}
+
+.blue {
+    color: #7FA3D5;
+}
+
+.green {
+    color: #038871
 }

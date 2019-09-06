@@ -15,7 +15,7 @@ class Search extends Component {
                 <Nav />
                 <div className="row">
                     <div className="col-md-12">
-                        <h1>SEARCH YOUR ROLO.DEX</h1>
+                        <h1><span className="green">SEARCH YOUR ROLO.DEX</span></h1>
                     </div>
                 </div>
                 <div className="row">

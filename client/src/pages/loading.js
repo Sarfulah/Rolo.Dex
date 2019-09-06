@@ -119,7 +119,7 @@ class Rolodex extends Component {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">LOG IN</h5>
+                                <h5 className="modal-title" id="exampleModalLabel"><span className="blue">LOG IN</span></h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -157,7 +157,7 @@ class Rolodex extends Component {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">SIGN UP</h5>
+                                <h5 className="modal-title" id="exampleModalLabel"><span className="green">SIGN UP</span></h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
