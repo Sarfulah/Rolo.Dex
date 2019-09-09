@@ -101,22 +101,14 @@ class Rolodex extends Component {
         return (
             <div className="container">
                 <div className="jumbotron loading">
-                    <div className="row mb-5">
-
-                        <div className="col-md-6">
-                            <img className="mt-5 mx-auto" src={logo}></img>
-                        </div>
-
+                    <div className="row mb-5 mt-5">
+                        <img className="mt-5 mx-auto" src={logo}></img>
                     </div>
                     <div className="row">
-                        <div className="col-md-12 mb-5">
-                            <Button className="loginB btn btn-lg" onClick={this.login} data-toggle="modal" data-target="#loginModal">LOGIN</Button>
-                        </div>
+                        <Button className="loginB btn btn-lg mx-auto mb-4" onClick={this.login} data-toggle="modal" data-target="#loginModal">LOGIN</Button>
                     </div>
                     <div className="row">
-                        <div className="col-md-12">
-                            <Button className="signupB btn btn-lg" onClick={this.signup} data-toggle="modal" data-target="#signupModal">SIGN UP</Button>
-                        </div>
+                        <Button className="signupB btn btn-lg mx-auto" onClick={this.signup} data-toggle="modal" data-target="#signupModal">SIGN UP</Button>
                     </div>
                 </div>
 
