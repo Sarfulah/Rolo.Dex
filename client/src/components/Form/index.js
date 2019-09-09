@@ -104,9 +104,10 @@ function Form(props) {
                         <input type="text" name="website" className="form-control" id="inputAddress" placeholder="Website"  value={props.website} onChange={props.handleInputChange}/>
                     </div>
                 </div>
-                <div className="form-group">
+                <div className="row">
+
+                <button onClick={props.handleFormSubmit} type="submit" className="btn btn-lg loginB mx-auto mt-3">Submit</button>
                 </div>
-                <button onClick={props.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
     );
