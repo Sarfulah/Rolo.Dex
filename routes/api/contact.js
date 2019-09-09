@@ -5,6 +5,9 @@ router.route("/")
   .get(contactController.findAll)
   .post(contactController.create);
 
+router.route("/latestqr")
+  .get(contactController.findLatest);
+
 router.route("/:id")
   .get(contactController.findById)
   .put(contactController.update)

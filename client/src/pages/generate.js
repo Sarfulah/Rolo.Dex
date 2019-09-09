@@ -86,7 +86,9 @@ class Generate extends Component {
 
     loadQRCode = () => {
         const { qrCode } = this.state;
-        //pull data from db and set to qrCode state
+        // API.getUser()
+        //     .then(res =>
+        //         this.setState({ qrCode: contacts }))
         API.getQR()
             .then(res =>
                 this.setState({ qrCode: res.data, qrShowHide: "show" }))
