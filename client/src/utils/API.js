@@ -1,7 +1,11 @@
 import axios from "axios";
 export default {
+  getLatestQR: function() {
+    return axios.get("/api/contact/latestqr");
+  },
   getQR: function(data) {
-      return axios.get("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + data);
+    console.log(data.data.firstName);
+      return axios.get("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + data.data.firstName);
   }, 
   getAllUsers: function(){
     return axios.get('/api/contact');
