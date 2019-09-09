@@ -7,11 +7,11 @@ function Form(props) {
                 <div className="form-row">
                     <div className="form-group col-md-6">
                         <label htmlFor="inputName">FIRST NAME</label>
-                        <input type="text" className="form-control" id="inputName" placeholder="John" />
+                        <input type="text" className="form-control" id="inputName" name="firstName" placeholder="John" value={props.firstName} onChange={props.handleInputChange}/>
                     </div>
                     <div className="form-group col-md-6">
                         <label htmlFor="inputPassword4">LAST NAME</label>
-                        <input type="text" className="form-control" id="inputName" placeholder="Smith" />
+                        <input type="text" className="form-control" id="inputName" name="lastName" placeholder="Smith" value={props.lastName}  onChange={props.handleInputChange}/>
                     </div>
                 </div>
                 <div className="form-row">
