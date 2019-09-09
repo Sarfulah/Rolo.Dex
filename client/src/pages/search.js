@@ -26,13 +26,31 @@ class Search extends Component {
                 </div>
                 <div className="row">
                     <div className="row-md-12 mx-auto">
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-lg signupB">Submit</button>
                     </div>
                 </div>
 
-                <div className="col-md-12">
-                    <h1>Mapped data here</h1>
+                <div className="row mt-5">
+      
+                    <div className="card contactBox mx-auto">
+                        <div className="card-body">
+                            <h2 className="card-title">
+                                CONTACT NAME
+                                </h2>
+
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <p>267-221-2223</p>
+                                </div>
+
+                                <div className="col-md-6">
+                                    <p>email@email.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+   
 
             </div>
         );
