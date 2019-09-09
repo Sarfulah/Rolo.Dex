@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const session = require('express-session')
+const path = require("path");
 const dbConnection = require("./database");
 const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
 const user = require('./routes/user');
+const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 // const db = require('./models');
@@ -17,6 +19,8 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+app.use(routes);
 //Sessions
 // const mongoose = require('mongoose')
 // mongoose.connect((process.env.MONGODB_URI || "mongodb://localhost/rolodex"), {useNewUrlParser: true});
