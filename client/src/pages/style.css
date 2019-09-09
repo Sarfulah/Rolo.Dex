@@ -24,6 +24,7 @@ h1 {
     font-size: 45px;
     color: #605353;
     text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
 }
 
 label{

@@ -6,6 +6,7 @@ import Button from "../components/Button";
 // import Modal from "../components/Modal";
 import Axios from "axios";
 import logo from "../assets/images/logoT@2x.png";
+import { Redirect } from 'react-router-dom';
 
 
 class Rolodex extends Component {
@@ -14,7 +15,8 @@ class Rolodex extends Component {
         emailLogIn: "",
         passwordLogIn: "",
         emailSignUp: "",
-        passwordSignUp: ""
+        passwordSignUp: "",
+        redirectTo: null
     };
 
     showModal = () => {
@@ -34,12 +36,15 @@ class Rolodex extends Component {
     }
 
     handleLogin = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
+
+        console.log(this.state.emailLogIn);
+        console.log(this.state.passwordLogIn);
 
         Axios
-            .post("/user/login", {
-                emailLogIn: this.state.email,
-                passwordLogIn: this.state.password
+            .post("/user/signin", {
+                email: this.state.emailLogIn,
+                password: this.state.passwordLogIn
             })
             .then(response => {
                 console.log("login response: ")
@@ -47,10 +52,11 @@ class Rolodex extends Component {
                 if (response.status === 200) {
                     this.props.updateUser({
                         loggedIn: true,
-                        emailLogIn: response.data.emailLogIn
+                        emailLogIn: response.data.email
                     })
                     this.setState({
-                        redirectTo: "/"
+                        show: false,
+                        redirectTo: "/loggedin"
                     })
                 }
             }).catch(error => {
@@ -68,9 +74,9 @@ class Rolodex extends Component {
 
         Axios
             .post('/user/signup', {
-                emailSignUp: this.state.email,
-                passwordSignUp: this.state.password
-            })
+                email: this.state.emailSignUp,
+                password: this.state.passwordSignUp
+        })
             .then(response => {
                 console.log(response)
                 if (response.status === 200) {
@@ -80,8 +86,8 @@ class Rolodex extends Component {
                     })
                     // console.log('successful signup')
                     this.setState({
-                        redirectTo: '/'
-                    })
+                        show: false
+                    });
                 } else {
                     console.log('Sign-up error');
                 }
@@ -125,7 +131,7 @@ class Rolodex extends Component {
                                 </button>
                             </div>
 
-                            <div className="modal-body">
+                                <div className="modal-body">
 
                                 <div className="form-group">
                                     <label className="col-sm-2 control-label"
@@ -134,7 +140,6 @@ class Rolodex extends Component {
                                         <input type="email" className="form-control"
                                             id="emailLogIn" name="emailLogIn" placeholder="Email" onChange={this.handleChange} value={this.state.emailLogIn} />
                                     </div>
-                                </div>
 
                                 <div className="form-group">
                                     <label className="col-sm-2 control-label"
@@ -150,7 +155,6 @@ class Rolodex extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
 
                 {/* Sign up modal */}
                 <div className="modal fade" id="signupModal" tabIndex="-1" role="dialog" aria-hidden="true">
@@ -163,7 +167,7 @@ class Rolodex extends Component {
                                 </button>
                             </div>
 
-                            <div className="modal-body">
+                                <div className="modal-body">
 
                                 <div className="form-group">
                                     <label className="col-sm-2 control-label"
@@ -172,7 +176,6 @@ class Rolodex extends Component {
                                         <input type="email" className="form-control"
                                             id="emailSignUp" name="emailSignUp" placeholder="Email" onChange={this.handleChange} value={this.state.emailSignUp} />
                                     </div>
-                                </div>
 
                                 <div className="form-group">
                                     <label className="col-sm-2 control-label"
@@ -189,8 +192,8 @@ class Rolodex extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
 }
 

@@ -16,31 +16,30 @@ function Form(props) {
                 </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label htmlFor="inputMobile">MOBILE</label>
-                        <input type="text" className="form-control" id="inputMobile" placeholder="215-555-1234" />
+                        <label for="inputMobile">Mobile</label>
+                        <input type="text" name="mobileNum" className="form-control" id="inputMobile" placeholder="Mobile"  value={props.mobileNum} onChange={props.handleInputChange}/>
                     </div>
                     <div className="form-group col-md-6">
-                        <label htmlFor="inputEmail4">EMAIL</label>
-                        <input type="text" className="form-control" id="inputEmail4" placeholder="your@email.com" />
+                        <label for="inputEmail4">Email</label>
+                        <input type="text" name="emailAdd" className="form-control" id="inputEmail4" placeholder="your@email.com"  value={props.emailAdd} onChange={props.handleInputChange}/>
                     </div>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="inputAddress">COMPANY</label>
-                    <input type="text" className="form-control" id="inputCompany" placeholder="Company" />
+                    <label for="inputAddress">Company</label>
+                    <input type="text" name="companyName" className="form-control" id="inputCompany" placeholder="Company"  value={props.companyName} onChange={props.handleInputChange}/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="inputAddress2">ADDRESS</label>
-                    <input type="text" className="form-control" id="inputAddress2" placeholder="123 Street Name" />
+                    <label for="inputAddress2">Address</label>
+                    <input type="text" name="address" className="form-control" id="inputAddress2" placeholder="123 Street Name"  value={props.address} onChange={props.handleInputChange}/>
                 </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label htmlFor="inputCity">CITY</label>
-                        <input type="text" className="form-control" id="inputCity"
-                            placeholder="Philadelphia" />
+                        <label for="inputCity">City</label>
+                        <input type="text" name="city" className="form-control" id="inputCity"  value={props.city} onChange={props.handleInputChange}/>
                     </div>
                     <div className="form-group col-md-4">
-                        <label htmlFor="inputState">STATE</label>
-                        <select id="inputState" className="form-control">
+                        <label for="inputState">State</label>
+                        <select id="inputState" name="state" className="form-control"  value={props.state} onChange={props.handleInputChange}>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -95,16 +94,19 @@ function Form(props) {
                         </select>
                     </div>
                     <div className="form-group col-md-2">
-                        <label htmlFor="inputZip">ZIP CODE</label>
-                        <input type="text" className="form-control" id="inputZip" placeholder="12345" />
+                        <label for="inputZip">Zip</label>
+                        <input type="text" name= "zip" className="form-control" id="inputZip"  value={props.zip} onChange={props.handleInputChange}/>
                     </div>
                 </div>
                 <div>
                     <div className="form-group">
-                        <label htmlFor="inputAddress">WEBSITE</label>
-                        <input type="text" className="form-control" id="inputAddress" placeholder="yoursite.url" />
+                        <label for="inputAddress">Website</label>
+                        <input type="text" name="website" className="form-control" id="inputAddress" placeholder="Website"  value={props.website} onChange={props.handleInputChange}/>
                     </div>
                 </div>
+                <div className="form-group">
+                </div>
+                <button onClick={props.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
     );
