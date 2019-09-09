@@ -116,9 +116,16 @@ p {
 
 .qr {
     align-content: center;
-    background-color: #FBCBBD;
+    background-color: #FDE5DE;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    width: 200px;
     margin-top: 175px;
 
+}
+
+canvas.hide {
+    height:"350px";
+    width: "350px";
 }
 
 .signupB {

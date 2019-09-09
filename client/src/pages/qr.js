@@ -26,9 +26,9 @@ class QR extends Component {
         return (
             <div className="container">
                 <Nav />
-                <div className="jumbotron qr">
+                <div className="jumbotron qr mx-auto">
                     <div className="row">
-                        <div className="mx-auto">
+                        <div className="mx-auto qrcode">
                             <QRCode value={this.state.qrCode} className={this.state.qrShowHide} ></QRCode>
                         </div>
                     </div>
