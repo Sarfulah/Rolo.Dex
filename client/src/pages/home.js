@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Button from "../components/Button";
 import "./style.css";
 import Nav from "../components/Nav";
+// import CaptureImage from "../components/Camera/camera"; 
 
 class Home extends Component {
     state = { show: false };
