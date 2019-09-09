@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+// import ReactDOM from "react-dom";
+import "./style.css";
 import Form from "../components/Form";
 import QRCodeButton from "../components/QRCodeButton";
 import API from '../utils/API';
@@ -11,14 +13,63 @@ class Generate extends Component {
         qrCode: "",
         qrShowHide: "hide",
         firstName: "",
-        lastName: ""
+        lastName: "",
+        mobileNum: "",
+        emailAdd: "",
+        companyName: "",
+        address: "",
+        city: "",
+        state: "",
+        zip: "",
+        website: "",
     };
 
     componentDidMount() {
         this.setState({ qrCode: "" })
     }
 
-    //help
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+        console.log({ [name]: value })
+    };
+
+    //   handleOnClick = event => {
+    //     console.log("I clicked saved")
+
+    //   }
+    handleFormSubmit = event => {
+
+        const { firstName, lastName, mobileNum, emailAdd, companyName, address, city, state, zip, website } = this.state;
+        event.preventDefault();
+        // console.log ("submit")
+        this.setState({
+            firstName: firstName,
+            lastName: lastName,
+            mobileNum: mobileNum,
+            emailAdd: emailAdd,
+            companyName: companyName,
+            address: address,
+            city: city,
+            state: state,
+            zip: zip,
+            website: website,
+        })
+        console.log(this.state.firstName);
+        console.log(this.state.lastName);
+        console.log(this.state.mobileNum);
+        console.log(this.state.emailAdd);
+        console.log(this.state.companyName);
+        console.log(this.state.address);
+        console.log(this.state.city);
+        console.log(this.state.state);
+        console.log(this.state.zip);
+        console.log(this.state.website);
+
+    }
 
     loadQRCode = () => {
         const { qrCode } = this.state;
@@ -34,12 +85,16 @@ class Generate extends Component {
     render() {
         return (
             <div>
-                <Form />
-                <QRCodeButton
-                onClick={this.generateQR}/>
-                
-                <QRCode value={this.state.qrCode} className={this.state.qrShowHide}></QRCode>
+                <Form
+                    // value={this.state.firstName}
+                    handleFormSubmit={this.handleFormSubmit}
+                    handleInputChange={this.handleInputChange}
+                />
 
+                <QRCodeButton
+                    onClick={this.generateQR} />
+
+                <QRCode value={this.state.qrCode} className={this.state.qrShowHide}></QRCode>
             </div>
         );
     }
