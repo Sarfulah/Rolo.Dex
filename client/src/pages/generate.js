@@ -27,10 +27,9 @@ class Generate extends Component {
         website: "",
     };
 
-    componentDidMount() {
-        this.setState({ qrCode: "" })
-    }
-
+    // componentDidMount() {
+    //     this.setState({ qrCode: "" })
+    // }
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -40,26 +39,22 @@ class Generate extends Component {
         console.log({ [name]: value })
     };
 
-    //   handleOnClick = event => {
-    //     console.log("I clicked saved")
-
-    //   }
     handleFormSubmit = event => {
 
-        const { firstName, lastName, mobileNum, emailAdd, companyName, address, city, state, zip, website } = this.state;
+        // const { firstName, lastName, mobileNum, emailAdd, companyName, address, city, state, zip, website } = this.state;
         event.preventDefault();
         // console.log ("submit")
         this.setState({
-            firstName: firstName,
-            lastName: lastName,
-            mobileNum: mobileNum,
-            emailAdd: emailAdd,
-            companyName: companyName,
-            address: address,
-            city: city,
-            state: state,
-            zip: zip,
-            website: website,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            mobileNum: this.state.mobileNum,
+            emailAdd: this.state.emailAdd,
+            companyName: this.state.companyName,
+            address: this.state.address,
+            city: this.state.city,
+            state: this.state.state,
+            zip: this.state.zip,
+            website: this.state.website,
         })
         console.log(this.state.firstName);
         console.log(this.state.lastName);
@@ -73,21 +68,21 @@ class Generate extends Component {
         console.log(this.state.website);
 
         API.addUser({
-          firstName: this.state.firstName, 
-          lastName: this.state.lastName, 
-          mobileNum: this.state.mobileNum,
-          emailAdd: this.state.emailAdd,
-          companyName: this.state.companyName,
-          address: this.state.address,
-          city: this.state.city,
-          state: this.state.state,
-          zip: this.state.zip,
-          website: this.state.website,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            mobileNum: this.state.mobileNum,
+            emailAdd: this.state.emailAdd,
+            companyName: this.state.companyName,
+            address: this.state.address,
+            city: this.state.city,
+            state: this.state.state,
+            zip: this.state.zip,
+            website: this.state.website,
         })
-        .then(res => 
-          console.log("Saved User: " + res))
-          .catch(err => console.log(err))
-      }
+            .then(res =>
+                console.log("Saved User: " + res))
+            .catch(err => console.log(err))
+    }
 
     loadQRCode = () => {
         const { qrCode } = this.state;
@@ -114,7 +109,7 @@ class Generate extends Component {
                         // value={this.state.firstName}
                         handleFormSubmit={this.handleFormSubmit}
                         handleInputChange={this.handleInputChange}
-                        onClick={this.generateQR}
+                    // onClick={this.generateQR}
                     />
 
                 </div>
