@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import ReactDOM from "react-dom";
 import "./style.css";
 import Form from "../components/Form";
+import Nav from "../components/Nav";
 import QRCodeButton from "../components/QRCodeButton";
 import API from '../utils/API';
 // import Button from "../components/Button"
@@ -84,17 +85,22 @@ class Generate extends Component {
     }
     render() {
         return (
-            <div>
-                <Form
-                    // value={this.state.firstName}
-                    handleFormSubmit={this.handleFormSubmit}
-                    handleInputChange={this.handleInputChange}
-                />
+            <div className="container">
+                <Nav />
+                <div className="row mt-5">
+                    <div className="col-md-6 mx-auto mb-4">
+                        <h1 className="mx-auto"><span className="blue">CREATE NEW CARD</span></h1>
+                    </div>
+                </div>
+                <div>
+                    <Form
+                        // value={this.state.firstName}
+                        handleFormSubmit={this.handleFormSubmit}
+                        handleInputChange={this.handleInputChange}
+                        onClick={this.generateQR}
+                    />
 
-                <QRCodeButton
-                    onClick={this.generateQR} />
-
-                <QRCode value={this.state.qrCode} className={this.state.qrShowHide}></QRCode>
+                </div>
             </div>
         );
     }

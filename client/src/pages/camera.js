@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import CaptureImage from "../components/Camera/camera"
+import Nav from "../components/Nav"
+import "./style.css";
 import Webcam from "react-webcam";
-// import { connect } from "react-redux";
+
 
 class Camera extends Component {
 
@@ -18,7 +19,7 @@ class Camera extends Component {
   capture = () => {
     const imageSrc = this.webcam.getScreenshot();
     this.setState({
-      imageData : imageSrc
+      imageData: imageSrc
     })
   };
 
@@ -32,8 +33,8 @@ class Camera extends Component {
   onClickSave = (e) => {
     e.persist();
     this.setState((previousState) => {
-      return{
-        saveImage : !previousState.saveImage
+      return {
+        saveImage: !previousState.saveImage
       }
     });
   }
@@ -54,7 +55,7 @@ class Camera extends Component {
     }
     this.props.saveJobImage(imageObject)
   }
-  
+
   saveform = () => {
     return (
       <div>
@@ -62,9 +63,9 @@ class Camera extends Component {
           <p>
             <label>Image name: </label>
             <input type="text"
-            name="image_name"
-            value={this.state.image_name}
-            onChange={this.handleChange} />
+              name="image_name"
+              value={this.state.image_name}
+              onChange={this.handleChange} />
             <input type="submit" value="Save" />
           </p>
         </form>
@@ -75,28 +76,40 @@ class Camera extends Component {
     const videoConstraints = {
       width: 1280,
       height: 720,
-      facingMode:  "user",
+      facingMode: "user",
     };
 
     return (
-      <div>
-        <Webcam
-        audio={false}
-        height={350}
-        ref={this.setRef}
-        screenshotFormat="image/jpeg"
-        width={350}
-        videoConstraints={videoConstraints}
-        />
-        <div className="button-container"><button onClick={this.capture}>Capture photo</button></div>
-        {this.state.imageData ?
-        <div>
-          <p><img src={this.state.imageData} alt=""/></p>
-          <span><button onClick={this.onClickRetake}>Retake?</button></span>
-          <span><button onClick={this.onClickSave}>Save</button></span>
-          {this.state.saveImage ? this.saveForm() : null}
+      <div className="container">
+        <Nav />
+        <div className="jumbotron camera">
+          <div className="row">
+            <Webcam className="mx-auto"
+              audio={false}
+              height={350}
+              ref={this.setRef}
+              screenshotFormat="image/jpeg"
+              width={350}
+              videoConstraints={videoConstraints}
+            />
           </div>
-          : null}
+          <div className="row mb-5">
+            <div className="button-container    mx-auto"><button className="loginB btn btn-lg" onClick={this.capture}>Capture photo</button>
+            </div>
+
+          </div>
+
+          <div className="row mt-5">
+            {this.state.imageData ?
+              <div className="mx-auto mt-5">
+                <p><img src={this.state.imageData} alt="" /></p>
+                <span><button className="mt-5 signupB btn btn-lg ml-5" onClick={this.onClickRetake}>Retake Photo</button></span>
+                <span><button className="mt-5 ml-5 loginB btn btn-lg" onClick={this.onClickSave}>Save</button></span>
+                {this.state.saveImage ? this.saveForm() : null}
+              </div>
+              : null}
+          </div>
+        </div>
       </div>
     );
 

@@ -1,4 +1,5 @@
 const express = require("express");
+const db = require('./models');
 const bodyParser = require("body-parser");
 const session = require('express-session')
 const dbConnection = require("./database");

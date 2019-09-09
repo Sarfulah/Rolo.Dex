@@ -4,8 +4,15 @@ import Home from "./pages/home";
 import Camera from "./pages/camera";
 import Loading from "./pages/loading";
 import Generate from "./pages/generate";
+import QR from "./pages/qr";
 import Search from "./pages/search";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCamera, faQrcode } from '@fortawesome/free-solid-svg-icons'
 import axios from "axios";
+
+library.add(fab, faCamera, faQrcode)
+
 
 class App extends React.Component {
   constructor() {
@@ -61,7 +68,8 @@ class App extends React.Component {
     <Route exact path="/loggedin" component={Home} />
     <Route exact path="/newCard" component={Generate} />
     <Route exact path="/search" component={Search} />
-    <Route exact path="/camera" component={Camera}/>
+    <Route exact path="/camera" component={Camera} />
+    <Route exact path="/qr" component={QR}/>
     </div>
     </Router>
   );

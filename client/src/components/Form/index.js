@@ -1,20 +1,17 @@
 import React from "react";
-import Nav from "../Nav";
 
 function Form(props) {
     return (
-        <div>
-
-            <Nav />
+        <div className="jumbotron generate">
             <form>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label for="inputName">First Name</label>
-                        <input type="text" name="firstName" className="form-control" id="inputName" placeholder="First Name" value={props.firstName} onChange={props.handleInputChange} />
+                        <label htmlFor="inputName">FIRST NAME</label>
+                        <input type="text" className="form-control" id="inputName" placeholder="John" />
                     </div>
                     <div className="form-group col-md-6">
-                        <label for="inputPassword4">Last Name</label>
-                        <input type="text" name="lastName"  className="form-control" id="inputName" placeholder="Last Name" value={props.lastName} onChange={props.handleInputChange}/>
+                        <label htmlFor="inputPassword4">LAST NAME</label>
+                        <input type="text" className="form-control" id="inputName" placeholder="Smith" />
                     </div>
                 </div>
                 <div className="form-row">
@@ -107,9 +104,10 @@ function Form(props) {
                         <input type="text" name="website" className="form-control" id="inputAddress" placeholder="Website"  value={props.website} onChange={props.handleInputChange}/>
                     </div>
                 </div>
-                <div className="form-group">
+                <div className="row">
+
+                <button onClick={props.handleFormSubmit} type="submit" className="btn btn-lg loginB mx-auto mt-3">Submit</button>
                 </div>
-                <button onClick={props.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
     );
