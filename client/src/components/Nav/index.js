@@ -8,7 +8,7 @@ function Nav() {
       <a className="navbar-brand" href="/">
         <img src={icon}></img>
       </a>
-      <ul className="nav float-right">
+      <ul className="nav ml-auto">
         <li className="nav-item">
           <a className="nav-link active" href="#"><FontAwesomeIcon icon="camera" size="lg" /></a>
         </li>
