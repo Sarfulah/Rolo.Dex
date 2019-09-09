@@ -2,18 +2,14 @@ import React, { Component } from "react";
 // import ReactDOM from "react-dom";
 import "./style.css";
 import Form from "../components/Form";
-<<<<<<< HEAD
-import Axios from "axios";
 import API from "../utils/API";
-import { Redirect } from 'react-router-dom';
-=======
+// import { Redirect } from 'react-router-dom';
 import Nav from "../components/Nav";
-import QRCodeButton from "../components/QRCodeButton";
-import API from '../utils/API';
+// import QRCodeButton from "../components/QRCodeButton";
+// import API from '../utils/API';
 // import Button from "../components/Button"
-import QRCode from 'qrcode.react';
+// import QRCode from 'qrcode.react';
 import "./style.css";
->>>>>>> 3c3e44bf36f530fadd8c217498d60b6a846e04b9
 
 class Generate extends Component {
     state = {
