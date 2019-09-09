@@ -86,6 +86,7 @@ class Generate extends Component {
 
     loadQRCode = () => {
         const { qrCode } = this.state;
+        //pull data from db and set to qrCode state
         API.getQR()
             .then(res =>
                 this.setState({ qrCode: res.data, qrShowHide: "show" }))
@@ -109,7 +110,7 @@ class Generate extends Component {
                         // value={this.state.firstName}
                         handleFormSubmit={this.handleFormSubmit}
                         handleInputChange={this.handleInputChange}
-                    // onClick={this.generateQR}
+                        onClick={this.generateQR}
                     />
 
                 </div>
