@@ -2,12 +2,18 @@ import React, { Component } from "react";
 // import ReactDOM from "react-dom";
 import "./style.css";
 import Form from "../components/Form";
+<<<<<<< HEAD
+import Axios from "axios";
+import API from "../utils/API";
+import { Redirect } from 'react-router-dom';
+=======
 import Nav from "../components/Nav";
 import QRCodeButton from "../components/QRCodeButton";
 import API from '../utils/API';
 // import Button from "../components/Button"
 import QRCode from 'qrcode.react';
 import "./style.css";
+>>>>>>> 3c3e44bf36f530fadd8c217498d60b6a846e04b9
 
 class Generate extends Component {
     state = {
@@ -70,7 +76,22 @@ class Generate extends Component {
         console.log(this.state.zip);
         console.log(this.state.website);
 
-    }
+        API.addUser({
+          firstName: this.state.firstName, 
+          lastName: this.state.lastName, 
+          mobileNum: this.state.mobileNum,
+          emailAdd: this.state.emailAdd,
+          companyName: this.state.companyName,
+          address: this.state.address,
+          city: this.state.city,
+          state: this.state.state,
+          zip: this.state.zip,
+          website: this.state.website,
+        })
+        .then(res => 
+          console.log("Saved User: " + res))
+          .catch(err => console.log(err))
+      }
 
     loadQRCode = () => {
         const { qrCode } = this.state;
