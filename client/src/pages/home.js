@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import "./style.css";
 import Nav from "../components/Nav";
+// import CaptureImage from "../components/Camera/camera"; 
 
 class Home extends Component {
     state = { show: false };
@@ -12,6 +13,8 @@ class Home extends Component {
     render() {
         return (
             <div>
+                
+                {/* <CaptureImage /> */}
                 <Nav />
                 <div className="card-body">
                     <Link to="/newCard" className="btn btn-primary">CREATE NEW CARD</Link>

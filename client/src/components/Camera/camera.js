@@ -1,6 +1,6 @@
 import React from "react";
 import Webcam from "react-webcam";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 class CaptureImage extends React.Component {
 
@@ -92,8 +92,8 @@ class CaptureImage extends React.Component {
         <div>
           <p><img src={this.state.imageData} alt=""/></p>
           <span><button onClick={this.onClickRetake}>Retake?</button></span>
-          <span><button onClick={this.conClickSave}>Save</button></span>
-          {this.state.saveImage ? this.saneForm() : null}
+          <span><button onClick={this.onClickSave}>Save</button></span>
+          {this.state.saveImage ? this.saveForm() : null}
           </div>
           : null}
       </div>
