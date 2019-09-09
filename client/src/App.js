@@ -7,9 +7,10 @@ import Search from "./pages/search";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCamera, faQrcode } from '@fortawesome/free-solid-svg-icons'
+import axios from "axios";
 
 library.add(fab, faCamera, faQrcode)
-import axios from "axios";
+
 
 class App extends React.Component {
   constructor() {
