@@ -36,7 +36,7 @@ class Rolodex extends Component {
     }
 
     handleLogin = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
 
         console.log(this.state.emailLogIn);
         console.log(this.state.passwordLogIn);
@@ -58,6 +58,7 @@ class Rolodex extends Component {
                         show: false,
                         redirectTo: "/loggedin"
                     })
+                    this.hideModal();
                 }
             }).catch(error => {
                 console.log("login error: ")
@@ -98,6 +99,9 @@ class Rolodex extends Component {
     };
 
     render() {
+        if (this.state.redirectTo){
+            return <Redirect to={{ pathname: this.state.redirectTo }}/>
+        } else {
         return (
             <div className="container">
                 <div className="jumbotron loading">
@@ -145,7 +149,9 @@ class Rolodex extends Component {
                                     </div>
                                 </div>
                                 <div className="modal-footer">
-                                    <button type="button" className="btn loginB" onClick={() => this.handleLogin()}>LOG IN</button>
+                                    {/* <button type="button" className="btn loginB" onClick={this.handleLogin}>LOG IN</button> */}
+
+                                    <button type="button" data-dismiss="modal" className="btn loginB" onClick={() => this.handleLogin()}>LOG IN</button>
                                 </div>
                             </div>
                         </div>
@@ -182,7 +188,7 @@ class Rolodex extends Component {
                                     </div>
                                 </div>
                                 <div className="modal-footer">
-                                    <button type="button" className="btn signupB" onClick={() => this.handleSignup()}>SIGN UP</button>
+                                    <button type="button" data-dismiss="modal" className="btn signupB" onClick={() => this.handleSignup()}>SIGN UP</button>
                                 </div>
                             </div>
                         </div>
@@ -191,6 +197,7 @@ class Rolodex extends Component {
             </div>
 
         );
+        }
     }
 }
 
