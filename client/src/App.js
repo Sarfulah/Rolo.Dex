@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/home";
+import Camera from "./pages/camera";
 import Loading from "./pages/loading";
 import Generate from "./pages/generate";
 import Search from "./pages/search";
@@ -60,6 +61,7 @@ class App extends React.Component {
     <Route exact path="/loggedin" component={Home} />
     <Route exact path="/newCard" component={Generate} />
     <Route exact path="/search" component={Search} />
+    <Route exact path="/camera" component={Camera}/>
     </div>
     </Router>
   );
