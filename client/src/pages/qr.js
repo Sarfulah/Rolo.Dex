@@ -55,7 +55,7 @@ class QR extends Component {
         API.getLatestQR()
             .then(data => {
                 console.log("DATA");
-                const qrData = "First Name: " + data.data.firstName + " / Last Name: " + data.data.lastName;
+                const qrData = "Name: " + data.data.firstName + " " + data.data.lastName + " " + " / Phone: " + data.data.mobileNum;
                 console.log(data);
                 this.setState({ qrCode: qrData, qrShowHide: "show" })
                 // API.getQR(data)
