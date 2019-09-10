@@ -31,26 +31,101 @@ class Search extends Component {
                 </div>
 
                 <div className="row mt-5">
-      
+
                     <div className="card contactBox mx-auto">
+
                         <div className="card-body">
-                            <h2 className="card-title">
-                                CONTACT NAME
-                                </h2>
-
                             <div className="row">
-                                <div className="col-md-6">
-                                    <p>267-221-2223</p>
+                                <h2 className="card-title mx-auto">
+                                    JESSICA FINLAYSON
+                                </h2>
+                            </div>
+                            <div className="row">
+                                <p className="mx-auto">WEB DEVELOPER</p>
+                            </div>
+                            <div className="row ml-2 mt-2">
+                                <div className="col-6">
+                                    <p>PHONE:    222-222-2222</p>
                                 </div>
-
-                                <div className="col-md-6">
-                                    <p>email@email.com</p>
+                                <div className="col-6">
+                                    <p>EMAIL:    email@email.com</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-   
+                <div className="row mt-5">
+
+                    <div className="card contactBox mx-auto">
+
+                        <div className="card-body">
+                            <div className="row">
+                                <h2 className="card-title mx-auto">
+                                    HAWK SHANNON
+            </h2>
+                            </div>
+                            <div className="row">
+                                <p className="mx-auto">WEB DEVELOPER</p>
+                            </div>
+                            <div className="row ml-2 mt-2">
+                                <div className="col-6">
+                                    <p>PHONE:    222-222-2222</p>
+                                </div>
+                                <div className="col-6">
+                                    <p>EMAIL:    email@email.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row mt-5">
+
+                    <div className="card contactBox mx-auto">
+                        
+                        <div className="card-body">
+                            <div className="row">
+                                <h2 className="card-title mx-auto">
+                                    SARFULAH STEWART
+                                </h2>
+                            </div>
+                            <div className="row">
+                                <p className="mx-auto">WEB DEVELOPER</p>
+                            </div>
+                            <div className="row ml-2 mt-2">
+                                <div className="col-6">
+                                    <p>PHONE:    222-222-2222</p>
+                                </div>
+                                <div className="col-6">
+                                    <p>EMAIL:    email@email.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row mt-5">
+
+                    <div className="card contactBox mx-auto">
+                        
+                        <div className="card-body">
+                            <div className="row">
+                                <h2 className="card-title mx-auto">
+                                    JENNIFER KWON
+                                </h2>
+                            </div>
+                            <div className="row">
+                                <p className="mx-auto">WEB DEVELOPER</p>
+                            </div>
+                            <div className="row ml-2 mt-2">
+                                <div className="col-6">
+                                    <p>PHONE:    222-222-2222</p>
+                                </div>
+                                <div className="col-6">
+                                    <p>EMAIL:    email@email.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         );
